@@ -1,0 +1,9 @@
+function u = laplacefd1(n);
+x=linspace(0,1,n+1);
+A=sparse(diag(2*ones(n-1,1))+diag((-1)*ones(n-2,1),1)+diag((-1)*ones(n-2,1),-1));
+left=0;
+right=0;
+f=ones(n-1,1);
+f(1)=f(1)+(n)^2*left;
+f(n-1)=f(n-1)+(n)^2*right;
+u=(n)^2*A\f;
